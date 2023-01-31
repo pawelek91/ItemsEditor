@@ -14,11 +14,7 @@ namespace ItemsEditorApi.Middleware
         }
         public void OnException(ExceptionContext context)
         {
-            if (!_hostEnvironment.IsDevelopment())
-            {
-                // Don't display exception details unless running in Development.
-                return;
-            }
+
             int code = 500;
 
             if (context.Exception is EntityAlreadyExistsException)
